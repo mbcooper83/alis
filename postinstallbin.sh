@@ -17,11 +17,6 @@ sudo pacman -Syu --noconfirm --needed python2-mako
 echo "Install Emby Server"
 sudo pacman -Syu --noconfirm --needed emby-server
 echo "Install XorgRDP"
-echo ""
-echo "#############################################"
-echo "Install YAY Packages"
-echo "#############################################"
-yay -Sy
 yay -S xorgxrdp-git
 yay -S xorg-xrdb
 echo "Install Teamviewer"
