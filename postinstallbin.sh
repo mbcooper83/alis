@@ -1,5 +1,5 @@
 #! /bin/sh
-
+set -e
 echo "#############################################"
 echo "      ARCH LINUX - POST INSTALL SCRIPT - MEDIA SERVER CONFIG"
 echo "#############################################"
@@ -9,16 +9,15 @@ echo ""
 echo "#############################################"
 echo "Install PACMAN Packages"
 echo "#############################################"
-pacman -Sy
-pacman -S nano
+sudo pacman -Syu --noconfirm --needed nano
 echo "Install Open SSHD"
-pacman -S openssh
+sudo pacman -Syu --noconfirm --needed openssh
 echo "Install deluge"
-pacman -S deluge
+sudo pacman -Syu --noconfirm --needed deluge
 echo "Install Python"
-pacman -S python2-mako
+sudo pacman -Syu --noconfirm --needed python2-mako
 echo "Install Emby Server"
-pacman -S emby-server
+sudo pacman -Syu --noconfirm --needed emby-server
 echo "Install XorgRDP"
 echo ""
 echo "#############################################"
@@ -66,4 +65,3 @@ echo "DONE!"
 echo "#############################################"
 echo ""
 read -p "Post-Build Script Complete - Press any key to reboot"
-sudo reboot
