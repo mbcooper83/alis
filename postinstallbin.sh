@@ -22,6 +22,9 @@ echo "Xcursor.core:1" > ~/.Xresources-xrdp
 rm ~/.xinitrc
 echo "xrdb ~/.Xresources-xrdp" >> ~/.xinitrc
 echo "exec startxfce4" >> ~/.xinitrc
+
+sudo wget -O /etc/samba/smb.conf https://raw.githubusercontent.com/mbcooper83/alis/master/smb.conf
+
 sudo systemctl enable sshd
 sudo systemctl enable xrdp
 sudo systemctl enable xrdp-sesman
