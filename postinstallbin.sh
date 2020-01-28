@@ -10,7 +10,7 @@ yay -S --noconfirm xorgxrdp-git
 yay -S --noconfirm xorg-xrdb
 yay -S --noconfirm teamviewer
 yay -S --noconfirm sickchill-git
-yay -S --noconfirm sonarr
+yay -S --noconfirm sonarr-git
 yay -S --noconfirm deluge-git
 
 echo "X11 Wrapper Config File"
@@ -26,11 +26,10 @@ sudo systemctl enable sshd
 sudo systemctl enable xrdp
 sudo systemctl enable xrdp-sesman
 sudo systemctl enable teamviewerd
-sudo systemctl enable teamviewerd
 sudo systemctl enable deluged
 sudo systemctl enable deluge-web
 sudo systemctl enable sickchill
-sudo systemctl enable emby-serversyste
+sudo systemctl enable emby-server
 sudo systemctl enable sonarr
 echo ""
 echo "#############################################"
