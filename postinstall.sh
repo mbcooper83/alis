@@ -1,3 +1,6 @@
 #!/usr/bin/env bash
 set -e
-curl -sL https://raw.githubusercontent.com/mbcooper83/alis/master/postinstallbin.sh | bash
+wget -sL https://raw.githubusercontent.com/mbcooper83/alis/master/postinstallbin.sh
+chmod +x postinstallbin.sh
+./postinstallbin.sh
+rm postinstallbin.sh
