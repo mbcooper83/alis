@@ -1,5 +1,3 @@
-#! /bin/sh
-set -e
 echo "#############################################"
 echo "      ARCH LINUX - POST INSTALL SCRIPT - MEDIA SERVER CONFIG"
 echo "#############################################"
