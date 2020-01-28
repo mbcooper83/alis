@@ -12,6 +12,7 @@ yay -S xorg-xrdb
 yay -S teamviewer
 yay -S sickchill-git
 yay -S sonarr
+
 echo "X11 Wrapper Config File"
 sudo rm /etc/X11/Xwrapper.config
 sudo echo "allowed_users=anybody" > /etc/X11/Xwrapper.config
