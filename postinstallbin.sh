@@ -7,29 +7,29 @@ echo ""
 echo "#############################################"
 echo "Install PACMAN Packages"
 echo "#############################################"
-yay -S --noconfirm nano
+sudo pacman -Syu --noconfirm --needed nano
 echo "Install Open SSHD"
-yay -S --noconfirm openssh
+sudo pacman -Syu --noconfirm --needed openssh
 echo "Install deluge"
-yay -S --noconfirm deluge
+sudo pacman -Syu --noconfirm --needed deluge
 echo "Install Python"
-yay -S --noconfirm python2-mako
+sudo pacman -Syu --noconfirm --needed python2-mako
 echo "Install Emby Server"
-yay -S --noconfirm emby-server
+sudo pacman -Syu --noconfirm --needed emby-server
 echo "Install XorgRDP"
 echo ""
 echo "#############################################"
 echo "Install YAY Packages"
 echo "#############################################"
 yay -Sy
-yay -S --noconfirm xorgxrdp-git
-yay -S --noconfirm xorg-xrdb
+yay -S xorgxrdp-git
+yay -S xorg-xrdb
 echo "Install Teamviewer"
-yay -S --noconfirm teamviewer
+yay -S teamviewer
 echo "Install Sickchill"
-yay -S --noconfirm sickchill-git
+yay -S sickchill-git
 echo "Install Sonarr"
-yay -S --noconfirm sonarr
+yay -S sonarr
 echo ""
 echo "#############################################"
 echo "Write Config Files"
@@ -55,11 +55,11 @@ sudo systemctl enable teamviewerd
 sudo systemctl enable deluged
 sudo systemctl enable deluge-web
 sudo systemctl enable sickchill
-sudo systemctl enable emby-serversyste
+sudo systemctl enable emby-server
 sudo systemctl enable sonarr
 echo ""
 echo "#############################################"
 echo "DONE!"
 echo "#############################################"
 echo ""
-read -p "Post-Build Script Complete - Press any key to exit"
+read -p "Post-Build Script Complete - Press any key to reboot"
