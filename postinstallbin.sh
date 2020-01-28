@@ -1,3 +1,5 @@
+#! /bin/sh
+
 echo "#############################################"
 echo "      ARCH LINUX - POST INSTALL SCRIPT - MEDIA SERVER CONFIG"
 echo "#############################################"
@@ -7,29 +9,29 @@ echo ""
 echo "#############################################"
 echo "Install PACMAN Packages"
 echo "#############################################"
-sudo pacman -Syu --noconfirm --needed nano
+yay -S --noconfirm nano
 echo "Install Open SSHD"
-sudo pacman -Syu --noconfirm --needed openssh
+yay -S --noconfirm openssh
 echo "Install deluge"
-sudo pacman -Syu --noconfirm --needed deluge
+yay -S --noconfirm deluge
 echo "Install Python"
-sudo pacman -Syu --noconfirm --needed python2-mako
+yay -S --noconfirm python2-mako
 echo "Install Emby Server"
-sudo pacman -Syu --noconfirm --needed emby-server
+yay -S --noconfirm emby-server
 echo "Install XorgRDP"
 echo ""
 echo "#############################################"
 echo "Install YAY Packages"
 echo "#############################################"
 yay -Sy
-yay -S xorgxrdp-git
-yay -S xorg-xrdb
+yay -S --noconfirm xorgxrdp-git
+yay -S --noconfirm xorg-xrdb
 echo "Install Teamviewer"
-yay -S teamviewer
+yay -S --noconfirm teamviewer
 echo "Install Sickchill"
-yay -S sickchill-git
+yay -S --noconfirm sickchill-git
 echo "Install Sonarr"
-yay -S sonarr
+yay -S --noconfirm sonarr
 echo ""
 echo "#############################################"
 echo "Write Config Files"
@@ -55,11 +57,11 @@ sudo systemctl enable teamviewerd
 sudo systemctl enable deluged
 sudo systemctl enable deluge-web
 sudo systemctl enable sickchill
-sudo systemctl enable emby-server
+sudo systemctl enable emby-serversyste
 sudo systemctl enable sonarr
 echo ""
 echo "#############################################"
 echo "DONE!"
 echo "#############################################"
 echo ""
-read -p "Post-Build Script Complete - Press any key to reboot"
+read -p "Post-Build Script Complete - Press any key to exit"
