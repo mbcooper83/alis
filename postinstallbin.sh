@@ -1,10 +1,11 @@
 #!/bin/bash
 
-yay -S nano
-yay -S openssh
-yay -S deluge
-yay -S python2-mako
-yay -S emby-server
+sudo pacman -Sy --noconfirm --needed nano
+sudo pacman -Sy --noconfirm --needed openssh
+sudo pacman -Sy --noconfirm --needed deluge
+sudo pacman -Sy --noconfirm --needed python2-mako
+sudo pacman -Sy --noconfirm --needed emby-server
+
 yay -Sy
 yay -S xorgxrdp-git
 yay -S xorg-xrdb
