@@ -1,30 +1,9 @@
+#!/bin/sh
 echo "#############################################"
 echo "      ARCH LINUX - POST INSTALL SCRIPT - MEDIA SERVER CONFIG"
 echo "#############################################"
 echo ""
-read -p "Press any key to start"
-echo ""
-echo "#############################################"
-echo "Install PACMAN Packages"
-echo "#############################################"
-sudo pacman -Syu --noconfirm --needed nano
-echo "Install Open SSHD"
-sudo pacman -Syu --noconfirm --needed openssh
-echo "Install deluge"
-sudo pacman -Syu --noconfirm --needed deluge
-echo "Install Python"
-sudo pacman -Syu --noconfirm --needed python2-mako
-echo "Install Emby Server"
-sudo pacman -Syu --noconfirm --needed emby-server
-echo "Install XorgRDP"
-yay -S xorgxrdp-git
-yay -S xorg-xrdb
-echo "Install Teamviewer"
-yay -S teamviewer
-echo "Install Sickchill"
-yay -S sickchill-git
-echo "Install Sonarr"
-yay -S sonarr
+read -p "Press ENTER to start"
 echo ""
 echo "#############################################"
 echo "Write Config Files"
@@ -50,11 +29,11 @@ sudo systemctl enable teamviewerd
 sudo systemctl enable deluged
 sudo systemctl enable deluge-web
 sudo systemctl enable sickchill
-sudo systemctl enable emby-server
+sudo systemctl enable emby-serversyste
 sudo systemctl enable sonarr
 echo ""
 echo "#############################################"
 echo "DONE!"
 echo "#############################################"
 echo ""
-read -p "Post-Build Script Complete - Press any key to reboot"
+read -p "Post-Build Script Complete - Press any key to exit"
