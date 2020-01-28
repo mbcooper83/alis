@@ -2,7 +2,6 @@
 
 sudo pacman -Sy --noconfirm --needed nano
 sudo pacman -Sy --noconfirm --needed openssh
-sudo pacman -Sy --noconfirm --needed deluge
 sudo pacman -Sy --noconfirm --needed python2-mako
 sudo pacman -Sy --noconfirm --needed emby-server
 
@@ -12,6 +11,7 @@ yay -S --noconfirm xorg-xrdb
 yay -S --noconfirm teamviewer
 yay -S --noconfirm sickchill-git
 yay -S --noconfirm sonarr
+yay -S --noconfirm deluge-git
 
 echo "X11 Wrapper Config File"
 sudo rm /etc/X11/Xwrapper.config
