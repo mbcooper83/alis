@@ -9,16 +9,16 @@ echo ""
 echo "#############################################"
 echo "Install PACMAN Packages"
 echo "#############################################"
-sudo pacman -Sy
-sudo pacman -S nano
+pacman -Sy
+pacman -S nano
 echo "Install Open SSHD"
-sudo pacman -S openssh
+pacman -S openssh
 echo "Install deluge"
-sudo pacman -S deluge
+pacman -S deluge
 echo "Install Python"
-sudo pacman -S python2-mako
+pacman -S python2-mako
 echo "Install Emby Server"
-sudo pacman -S emby-server
+pacman -S emby-server
 echo "Install XorgRDP"
 echo ""
 echo "#############################################"
@@ -58,7 +58,7 @@ sudo systemctl enable teamviewerd
 sudo systemctl enable deluged
 sudo systemctl enable deluge-web
 sudo systemctl enable sickchill
-sudo systemctl enable emby-serversyste
+sudo systemctl enable emby-server
 sudo systemctl enable sonarr
 echo ""
 echo "#############################################"
