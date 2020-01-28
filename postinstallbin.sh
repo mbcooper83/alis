@@ -9,6 +9,7 @@ echo ""
 echo "#############################################"
 echo "Install PACMAN Packages"
 echo "#############################################"
+sudo pacman -Sy
 sudo pacman -S nano
 echo "Install Open SSHD"
 sudo pacman -S openssh
