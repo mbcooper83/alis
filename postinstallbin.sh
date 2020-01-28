@@ -6,6 +6,33 @@ echo ""
 read -p "Press ENTER to start"
 echo ""
 echo "#############################################"
+echo "Install PACMAN Packages"
+echo "#############################################"
+sudo pacman -S nano
+echo "Install Open SSHD"
+sudo pacman -S openssh
+echo "Install deluge"
+sudo pacman -S deluge
+echo "Install Python"
+sudo pacman -S python2-mako
+echo "Install Emby Server"
+sudo pacman -S emby-server
+echo "Install XorgRDP"
+echo ""
+echo "#############################################"
+echo "Install YAY Packages"
+echo "#############################################"
+yay -Sy
+yay -S xorgxrdp-git
+yay -S xorg-xrdb
+echo "Install Teamviewer"
+yay -S teamviewer
+echo "Install Sickchill"
+yay -S sickchill-git
+echo "Install Sonarr"
+yay -S sonarr
+echo ""
+echo "#############################################"
 echo "Write Config Files"
 echo "#############################################"
 echo "X11 Wrapper Config File"
