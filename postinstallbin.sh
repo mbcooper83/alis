@@ -12,7 +12,7 @@ yay -S --noconfirm teamviewer
 yay -S --noconfirm sickchill-git
 yay -S --noconfirm sonarr-git
 yay -S --noconfirm deluge-git
-
+yay -S --noconfirm samba
 echo "X11 Wrapper Config File"
 sudo rm /etc/X11/Xwrapper.config
 sudo echo "allowed_users=anybody" > /etc/X11/Xwrapper.config
