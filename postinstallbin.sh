@@ -7,11 +7,11 @@ sudo pacman -Sy --noconfirm --needed python2-mako
 sudo pacman -Sy --noconfirm --needed emby-server
 
 yay -Sy
-yay -S xorgxrdp-git
-yay -S xorg-xrdb
-yay -S teamviewer
-yay -S sickchill-git
-yay -S sonarr
+yay -S --noconfirm xorgxrdp-git
+yay -S --noconfirm xorg-xrdb
+yay -S --noconfirm teamviewer
+yay -S --noconfirm sickchill-git
+yay -S --noconfirm sonarr
 
 echo "X11 Wrapper Config File"
 sudo rm /etc/X11/Xwrapper.config
