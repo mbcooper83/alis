@@ -15,17 +15,8 @@ yay -S --noconfirm deluge-git
 yay -S --noconfirm samba
 yay -S --noconfirm apache
 
-sudo systemctl enable sshd
-sudo systemctl enable xrdp
-sudo systemctl enable xrdp-sesman
-sudo systemctl enable teamviewerd
-sudo systemctl enable deluged
-sudo systemctl enable deluge-web
-sudo systemctl enable sickchill
-sudo systemctl enable emby-server
-sudo systemctl enable sonarr
-sudo systemctl enable httpd
-
+sudo rm /etc/X11/Xwrapper.config
+sudo echo "allowed_users=anybody" > /etc/X11/Xwrapper.config
 rm  ~/.Xresources-xrdp
 echo "Xcursor.core:1" > ~/.Xresources-xrdp
 rm ~/.xinitrc
@@ -37,6 +28,17 @@ sudo wget -O /srv/http/index.html https://raw.githubusercontent.com/mbcooper83/a
 mkdir /mnt/mediashare
 sudo chmod -R 0777 /mnt/mediashare
 sudo smbpasswd -a mrv
+
+sudo systemctl enable sshd
+sudo systemctl enable xrdp
+sudo systemctl enable xrdp-sesman
+sudo systemctl enable teamviewerd
+sudo systemctl enable deluged
+sudo systemctl enable deluge-web
+sudo systemctl enable sickchill
+sudo systemctl enable emby-server
+sudo systemctl enable sonarr
+sudo systemctl enable httpd
 
 read -p "Post-Build Script Complete - Press any key to exit"
 sudo shutdown -r now
