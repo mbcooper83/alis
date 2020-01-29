@@ -23,7 +23,14 @@ rm ~/.xinitrc
 echo "xrdb ~/.Xresources-xrdp" >> ~/.xinitrc
 echo "exec startxfce4" >> ~/.xinitrc
 
+sudo rm /etc/samba/smb.conf
 sudo wget -O /etc/samba/smb.conf https://raw.githubusercontent.com/mbcooper83/alis/master/smb.conf
+sudo mkdir /mnt/mediashare
+sudo chmod -R 0777 /mnt/mediashare
+echo "Set Samba Passwords"
+sudo smbpasswd -a mrv
+sudo smbpasswd -a noone
+systemctl enable smb
 
 sudo systemctl enable sshd
 sudo systemctl enable xrdp
