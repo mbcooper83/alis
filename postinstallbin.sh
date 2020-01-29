@@ -13,7 +13,7 @@ yay -S --noconfirm sickchill-git
 yay -S --noconfirm sonarr
 yay -S --noconfirm deluge-git
 yay -S --noconfirm samba
-
+yay -S --noconfirm apache
 
 sudo rm /etc/X11/Xwrapper.config
 sudo echo "allowed_users=anybody" > /etc/X11/Xwrapper.config
@@ -25,6 +25,7 @@ echo "xrdb ~/.Xresources-xrdp" >> ~/.xinitrc
 echo "exec startxfce4" >> ~/.xinitrc
 sudo rm /etc/samba/smb.conf
 sudo wget -O /etc/samba/smb.conf https://raw.githubusercontent.com/mbcooper83/alis/master/smb.conf
+sudo wget -O /srv/http/index.html https://raw.githubusercontent.com/mbcooper83/alis/master/index.html
 mkdir /mnt/mediashare
 sudo chmod -R 0777 /mnt/mediashare
 sudo smbpasswd -a mrv
@@ -39,10 +40,11 @@ sudo systemctl enable deluge-web
 sudo systemctl enable sickchill
 sudo systemctl enable emby-server
 sudo systemctl enable sonarr
+sudo systemctl enable httpd
 echo ""
 echo "#############################################"
 echo "DONE!"
 echo "#############################################"
 echo ""
 read -p "Post-Build Script Complete - Press any key to exit"
-
+sudo shutdown -r now
