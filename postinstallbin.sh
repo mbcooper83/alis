@@ -10,7 +10,7 @@ yay -S --noconfirm xorgxrdp-git
 yay -S --noconfirm xorg-xrdb
 yay -S --noconfirm teamviewer
 yay -S --noconfirm sickchill-git
-yay -S --noconfirm sonarr-git
+yay -S --noconfirm sonarr
 yay -S --noconfirm deluge-git
 yay -S --noconfirm samba
 echo "X11 Wrapper Config File"
@@ -22,16 +22,16 @@ echo "Xcursor.core:1" > ~/.Xresources-xrdp
 rm ~/.xinitrc
 echo "xrdb ~/.Xresources-xrdp" >> ~/.xinitrc
 echo "exec startxfce4" >> ~/.xinitrc
-
-sudo rm /etc/samba/smb.conf
-sudo wget -O /etc/samba/smb.conf https://raw.githubusercontent.com/mbcooper83/alis/master/smb.conf
-sudo mkdir /mnt/mediashare
-sudo chmod -R 0777 /mnt/mediashare
-echo "Set Samba Passwords"
-sudo smbpasswd -a mrv
-sudo smbpasswd -a noone
+su root
+rm /etc/samba/smb.conf
+wget -O /etc/samba/smb.conf https://raw.githubusercontent.com/mbcooper83/alis/master/smb.conf
+mkdir /mnt/mediashare
+chmod -R 0777 /mnt/mediashare
+"Set Samba Passwords"
+smbpasswd -a mrv
+smbpasswd -a noone
 systemctl enable smb
-
+su mrv
 sudo systemctl enable sshd
 sudo systemctl enable xrdp
 sudo systemctl enable xrdp-sesman
