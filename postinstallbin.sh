@@ -13,7 +13,8 @@ yay -S --noconfirm sickchill-git
 yay -S --noconfirm sonarr
 yay -S --noconfirm deluge-git
 yay -S --noconfirm samba
-echo "X11 Wrapper Config File"
+
+
 sudo rm /etc/X11/Xwrapper.config
 sudo echo "allowed_users=anybody" > /etc/X11/Xwrapper.config
 echo "Configure Xinitrc for XFCE4"
@@ -22,16 +23,13 @@ echo "Xcursor.core:1" > ~/.Xresources-xrdp
 rm ~/.xinitrc
 echo "xrdb ~/.Xresources-xrdp" >> ~/.xinitrc
 echo "exec startxfce4" >> ~/.xinitrc
-su root
-rm /etc/samba/smb.conf
-wget -O /etc/samba/smb.conf https://raw.githubusercontent.com/mbcooper83/alis/master/smb.conf
+sudo rm /etc/samba/smb.conf
+sudo wget -O /etc/samba/smb.conf https://raw.githubusercontent.com/mbcooper83/alis/master/smb.conf
 mkdir /mnt/mediashare
-chmod -R 0777 /mnt/mediashare
-"Set Samba Passwords"
-smbpasswd -a mrv
-smbpasswd -a noone
-systemctl enable smb
-su mrv
+sudo chmod -R 0777 /mnt/mediashare
+sudo smbpasswd -a mrv
+
+
 sudo systemctl enable sshd
 sudo systemctl enable xrdp
 sudo systemctl enable xrdp-sesman
