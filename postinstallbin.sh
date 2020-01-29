@@ -15,9 +15,17 @@ yay -S --noconfirm deluge-git
 yay -S --noconfirm samba
 yay -S --noconfirm apache
 
-sudo rm /etc/X11/Xwrapper.config
-sudo echo "allowed_users=anybody" > /etc/X11/Xwrapper.config
-echo "Configure Xinitrc for XFCE4"
+sudo systemctl enable sshd
+sudo systemctl enable xrdp
+sudo systemctl enable xrdp-sesman
+sudo systemctl enable teamviewerd
+sudo systemctl enable deluged
+sudo systemctl enable deluge-web
+sudo systemctl enable sickchill
+sudo systemctl enable emby-server
+sudo systemctl enable sonarr
+sudo systemctl enable httpd
+
 rm  ~/.Xresources-xrdp
 echo "Xcursor.core:1" > ~/.Xresources-xrdp
 rm ~/.xinitrc
@@ -30,21 +38,5 @@ mkdir /mnt/mediashare
 sudo chmod -R 0777 /mnt/mediashare
 sudo smbpasswd -a mrv
 
-
-sudo systemctl enable sshd
-sudo systemctl enable xrdp
-sudo systemctl enable xrdp-sesman
-sudo systemctl enable teamviewerd
-sudo systemctl enable deluged
-sudo systemctl enable deluge-web
-sudo systemctl enable sickchill
-sudo systemctl enable emby-server
-sudo systemctl enable sonarr
-sudo systemctl enable httpd
-echo ""
-echo "#############################################"
-echo "DONE!"
-echo "#############################################"
-echo ""
 read -p "Post-Build Script Complete - Press any key to exit"
 sudo shutdown -r now
