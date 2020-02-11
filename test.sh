@@ -271,14 +271,12 @@ pacman_install "xdg-user-dirs"
 pacman_install "xfce4 xfce4-goodies lightdm lightdm-gtk-greeter"
 arch-chroot /mnt systemctl enable lightdm.service
 
-pacman_install "$PACKAGES_PACMAN"
-pacman_install "git"
-yay -Syu --noconfirm --needed xrdp-git xrdb sickchill-git radarr deluge-git wine
+arch-chroot /mnt pacman_install "$PACKAGES_PACMAN"
+arch-chroot /mnt pacman_install "git"
+arch-chroot /mnt yay -Syu --noconfirm --needed xrdp-git xrdb sickchill-git radarr deluge-git wine
 arch-chroot /mnt sed -i 's/%wheel ALL=(ALL) ALL/%wheel ALL=(ALL) NOPASSWD: ALL/' /etc/sudoers
 arch-chroot /mnt bash -c "echo -e \"$USER_PASSWORD\n$USER_PASSWORD\n$USER_PASSWORD\n$USER_PASSWORD\n\"" | su $USER_NAME -c \"cd /home/$USER_NAME && git clone https://aur.archlinux.org/yay.git && (cd yay && makepkg -si --noconfirm) && rm -rf yay\""
 arch-chroot /mnt sed -i 's/%wheel ALL=(ALL) NOPASSWD: ALL/%wheel ALL=(ALL) ALL/' /etc/sudoers
-aur_install $PACKAGES_AUR
-
 
 function terminate() {
 done
@@ -296,3 +294,5 @@ sleep 10
 fi
 done
 }
+
+echo "hello"
