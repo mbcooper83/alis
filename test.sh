@@ -58,8 +58,6 @@ VULKAN="false"
 DISPLAY_DRIVER_HARDWARE_ACCELERATION="false"
 DISPLAY_DRIVER_HARDWARE_ACCELERATION_INTEL="libva-intel-driver"
 PACKAGES_PACMAN="firefox curl wget openssh gimp blender gnome-initial-setup dosfstools ntfs-3g exfat-utils kcalc python git xorg nano python2-mako emby-server samba apache
-AUR="yay"
-PACKAGES_AUR="xrdp-git xrdb sickchill-git radarr deluge-git wine"
 set -o xtrace
 if [ -d /sys/firmware/efi ]; then
 BIOS_TYPE="uefi"
@@ -275,6 +273,7 @@ arch-chroot /mnt systemctl enable lightdm.service
 
 pacman_install "$PACKAGES_PACMAN"
 pacman_install "git"
+yay -Syu --noconfirm --needed xrdp-git xrdb sickchill-git radarr deluge-git wine
 arch-chroot /mnt sed -i 's/%wheel ALL=(ALL) ALL/%wheel ALL=(ALL) NOPASSWD: ALL/' /etc/sudoers
 arch-chroot /mnt bash -c "echo -e \"$USER_PASSWORD\n$USER_PASSWORD\n$USER_PASSWORD\n$USER_PASSWORD\n\"" | su $USER_NAME -c \"cd /home/$USER_NAME && git clone https://aur.archlinux.org/yay.git && (cd yay && makepkg -si --noconfirm) && rm -rf yay\""
 arch-chroot /mnt sed -i 's/%wheel ALL=(ALL) NOPASSWD: ALL/%wheel ALL=(ALL) ALL/' /etc/sudoers
