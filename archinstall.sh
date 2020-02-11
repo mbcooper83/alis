@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 set -e
+echo "hello"
 #PARTITION_BOOT_NUMBER=0
 CONF_FILE="alis.conf"
 LOG_FILE="alis.log"
@@ -14,15 +15,15 @@ echo These are the available storage devices
 echo ...
 df
 echo ...
-echo Enter target storage device for arch media server install - This drive will be formatted!
+echo "Enter target storage device for arch media server install - This drive will be formatted!"
 read devname
 DEVICE="/dev/$devname"
 echo ...
-echo Enter desired host name for arch media server
+echo "Enter desired host name for arch media server"
 read hostinput
 HOSTNAME="$hostinput"
 echo ...
-echo Enter user name for arch media server primary user - pwd will be archlinux
+echo "Enter user name for arch media server primary user - pwd will be archlinux"
 read usernameinput
 ROOT_PASSWORD="archlinux" # Root user password. Warning: change it!
 ROOT_PASSWORD_RETYPE="archlinux"
