@@ -23,4 +23,4 @@ arch-chroot /mnt wget -O /srv/http/index.html https://raw.githubusercontent.com/
 arch-chroot /mnt mkdir /mnt/5tbsidk
 arch-chroot /mnt chmod -R 0777 /mnt/5tbdisk
 arch-chroot /mnt wget https://raw.githubusercontent.com/mbcooper83/alis/master/configfiles.tar.gz
-arch-chroot /mnt tar xvzf configfiles.tar.gz
+arch-chroot /mnt unzip configfiles.zip
