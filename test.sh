@@ -280,6 +280,7 @@ arch-chroot /mnt sed -i 's/%wheel ALL=(ALL) NOPASSWD: ALL/%wheel ALL=(ALL) ALL/'
 
 function terminate() {
 done
+
 }
 
 function pacman_install() {
