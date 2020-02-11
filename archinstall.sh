@@ -169,12 +169,8 @@ function warning() {
 }
 
 function init() {
-    echo ""
-    echo -e "${LIGHT_BLUE}# init() step${NC}"
-    echo ""
-
-    init_log
-    loadkeys $KEYS
+init_log
+loadkeys $KEYS
 }
 
 function init_log() {
