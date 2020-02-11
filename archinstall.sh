@@ -870,4 +870,5 @@ function main() {
     end
 }
 
+echo "end"
 main
