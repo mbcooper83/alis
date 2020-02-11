@@ -1,20 +1,5 @@
 #!/bin/bash
 
-sudo pacman -Sy --noconfirm --needed nano
-sudo pacman -Sy --noconfirm --needed openssh
-sudo pacman -Sy --noconfirm --needed python2-mako
-sudo pacman -Sy --noconfirm --needed emby-server
-
-yay -Sy
-yay -S --noconfirm xorgxrdp-git
-yay -S --noconfirm xorg-xrdb
-yay -S --noconfirm teamviewer
-yay -S --noconfirm sickchill-git
-yay -S --noconfirm radarr
-yay -S --noconfirm deluge-git
-yay -S --noconfirm samba
-yay -S --noconfirm apache
-
 sudo rm /etc/X11/Xwrapper.config
 sudo echo "allowed_users=anybody" > /etc/X11/Xwrapper.config
 rm  ~/.Xresources-xrdp
@@ -42,3 +27,5 @@ sudo systemctl enable httpd
 
 read -p "Post-Build Script Complete - Press any key to exit"
 sudo shutdown -r now
+
+
