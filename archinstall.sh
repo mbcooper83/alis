@@ -819,5 +819,5 @@ function main() {
     terminate
     end
 }
-
+echo "marker"
 main
