@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 set -e
-
+rm /etc/pacman.d/mirrorlist
+echo"Server=https://mirrors.nix.org.ua/linux/archlinux/$repo/os/$arch" > /etc/pacman.d/mirrorlist
 pacman -Sy wget nano git
-http://mirrors.nix.org.ua/linux/archlinux/"
+
 # Arch Linux Install Script (alis) installs unattended, automated
 # and customized Arch Linux system.
 # Copyright (C) 2018 mbcooper83
