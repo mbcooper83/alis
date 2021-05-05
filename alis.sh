@@ -537,7 +537,7 @@ function virtualbox() {
     echo ""
 
     if [ -z "$KERNELS" ]; then
-        pacman_install "virtualbox-guest-utils virtualbox-guest-modules-arch"
+        pacman_install "virtualbox-guest-utils virtualbox-guest-dkms"
     else
         pacman_install "virtualbox-guest-utils virtualbox-guest-dkms"
     fi
