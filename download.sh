@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 set -e
 
+pacman -Sy wget nano git
+http://mirrors.nix.org.ua/linux/archlinux/"
 # Arch Linux Install Script (alis) installs unattended, automated
 # and customized Arch Linux system.
 # Copyright (C) 2018 mbcooper83
