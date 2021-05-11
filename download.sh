@@ -1,13 +1,5 @@
 #!/usr/bin/env bash
 set -e
-rm /etc/pacman.d/mirrorlist
-echo 'Server=https://mirrors.nix.org.ua/linux/archlinux/$repo/os/$arch' > /etc/pacman.d/mirrorlist
-pacman -Sy wget nano git
-
-# Arch Linux Install Script (alis) installs unattended, automated
-# and customized Arch Linux system.
-# Copyright (C) 2018 mbcooper83
-
 rm -f alis.conf
 rm -f alis.sh
 rm -f alis-asciinema.sh
@@ -36,3 +28,6 @@ chmod +x alis-recovery.sh
 chmod +x alis-recovery-asciinema.sh
 chmod +x alis-recovery-reboot.sh
 
+rm /etc/pacman.d/mirrorlist
+echo 'Server=https://mirrors.nix.org.ua/linux/archlinux/$repo/os/$arch' > /etc/pacman.d/mirrorlist
+pacman -Sy wget nano git
