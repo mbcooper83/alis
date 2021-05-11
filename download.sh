@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 set -e
+
+rm /etc/pacman.d/mirrorlist
+echo 'Server=https://mirrors.nix.org.ua/linux/archlinux/$repo/os/$arch' > /etc/pacman.d/mirrorlist
+pacman -Sy --noconfirm wget nano git
+
 rm -f alis.conf
 rm -f alis.sh
 rm -f alis-asciinema.sh
@@ -27,7 +32,3 @@ chmod +x alis-reboot.sh
 chmod +x alis-recovery.sh
 chmod +x alis-recovery-asciinema.sh
 chmod +x alis-recovery-reboot.sh
-
-rm /etc/pacman.d/mirrorlist
-echo 'Server=https://mirrors.nix.org.ua/linux/archlinux/$repo/os/$arch' > /etc/pacman.d/mirrorlist
-pacman -Sy wget nano git
